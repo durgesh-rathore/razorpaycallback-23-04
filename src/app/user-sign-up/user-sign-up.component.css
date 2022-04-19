@@ -1,0 +1,16 @@
+.col-md-7 label{
+    font-size: 22px;
+    color: rgb(105, 67, 76);
+
+}
+.container{
+    background-color: rgb(212, 224, 224);
+    margin-left: 50px;
+    width: 600px;
+    height: 440px;
+    padding: 15px;
+    margin: auto;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}

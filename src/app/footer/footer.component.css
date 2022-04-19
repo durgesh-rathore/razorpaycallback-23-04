@@ -1,0 +1,19 @@
+.imagefooter{
+    text-align: center;
+    margin: auto;
+}
+
+.imagefooter p{
+   margin-left: 3px;
+   text-align: center;
+} 
+.icons{
+    /* text-align: center; */
+    margin-top: 50px;
+    /* margin-left: 380px; */
+   
+    
+}
+.icons img{
+    margin-left: 110px;
+}

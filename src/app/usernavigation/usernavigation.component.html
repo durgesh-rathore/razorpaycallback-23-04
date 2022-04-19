@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row navdesign">
+    <div class="col-3  d-flex justify-content-start">
+      <a href="#" class="logo "> <img src="../../assets/images/Group 36.png" width="70px" height="60px"> </a>
+      <h4 >Apna Restourent</h4>
+    </div>
+    <div class="col-9 d-flex justify-content-end">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+
+        <!-- <a class="navbar-brand">Navbar</a> -->
+ <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+
+          <ul class="navbar-nav cl">
+            <li class="nav-item">
+              <a  class="nav-link" routerLink="Home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a  class="nav-link" routerLink="aboutus">About</a>
+            </li>
+            <li class="nav-item">
+              <a  class="nav-link" routerLink="contactus">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="signup">SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="signin">SignIn</a>
+            </li>
+            <!-- <li class="nav-item">
+            <a *ngIf="!cheackTokenHtml()" class="nav-link" routerLink="viewProduct">View Product</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="orderPlace">Order Place</a>
+          </li> -->
+            <li class="nav-item">
+              <a *ngIf="!cheackTokenHtml()" class="nav-link" (click)="SignOut()">SignOut</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-show-category',
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-category.component.css']
 })
 export class ShowCategoryComponent implements OnInit {
+  categoryList: any;
 
-  constructor() { }
+  constructor( private category:CategoryService) {
+    this.category.viewCategoryf().subscribe(result=>{
+      if(result){
+        console.log("result"+result);
+        this.categoryList=result;  
+      }
+      this.categoryList=result;
+    })
+   }
+
 
   ngOnInit(): void {
   }

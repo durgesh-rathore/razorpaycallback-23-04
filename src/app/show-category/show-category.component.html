@@ -5,13 +5,14 @@
     <button class="btn justify-content-center mt-5">Category</button>
   </div> 
     <div class="row ">
-        <div class="col-md-3 category-card">
+        <div *ngFor="let category of categoryList" class="col-md-3 category-card">
         <div class="category-image">
-            <img src="../../assets/images/pexels-julie-aagaard-2097090.jpg" >
+            <!-- <img src="../../assets/images/pexels-julie-aagaard-2097090.jpg" > -->
+            <img src="{{category.categoryImageUrl}}" alt="">
         </div>
-         <a href="">Punjabi </a>
+         <a href="">{{category.categoryName}} </a>
         </div>
-        <div class="col-md-3  category-card">
+        <!-- <div class="col-md-3  category-card">
             <div class="category-image">
                 <img src="../../assets/images/pexels-ella-olsson-1640777.jpg" >
 
@@ -31,7 +32,7 @@
 
             </div>
             <a href="">Marathi </a>
-        </div>
+        </div> -->
 
     </div>
     

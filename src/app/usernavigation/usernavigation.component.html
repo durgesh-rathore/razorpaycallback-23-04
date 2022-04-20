@@ -17,14 +17,23 @@
 
           <ul class="navbar-nav cl">
             <li class="nav-item">
-              <a  class="nav-link" routerLink="Home">Home</a>
+              <div class="input-group">
+                <div class=" form-outline ">
+                  <input type="search" id="form1" class="form-control fas fa-search" placeholder="Search" />
+                  <!-- <label class="form-label" for="form1">Search</label> -->
+                </div>
+                <button type="button" class="btn btn-warning">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <a *ngIf="!cheackTokenHtml()" class="nav-link" routerLink="viewcart">view Cart</a>
             </li>
-            <li class="nav-item">
-              <a  class="nav-link" routerLink="aboutus">About</a>
-            </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
+              <a *ngIf="!cheackTokenHtml()" class="nav-link" routerLink="favorate">favorate item</a>
+            </li> --> 
+             <li class="nav-item">
               <a  class="nav-link" routerLink="contactus">Contact Us</a>
-            </li>
+            </li> 
             <li class="nav-item">
               <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="signup">SignUp</a>
             </li>
@@ -48,9 +57,9 @@
 
 </div>
 
-<div>
+<!-- <div>
   <router-outlet></router-outlet>
-</div>
+</div> -->
 
 <div class="container">
   <router-outlet></router-outlet>

@@ -18,6 +18,7 @@ import { TokenAuthService } from './token-auth.service';
 import { FormsModule } from '@angular/forms';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
     ContactusComponent,
     FooterComponent,
     UserSignInComponent,
-    UserSignUpComponent
+    UserSignUpComponent,
+    ViewCartComponent
   ],
   imports: [
     BrowserModule,

@@ -24,6 +24,9 @@ export class UserSignInComponent implements OnInit {
         alert("your login failed");
     });
   }
+  googlelogin(){
+    
+  }
   ngOnInit(): void {
   }
 

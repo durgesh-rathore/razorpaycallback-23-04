@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,  FacebookLoginProvider} from 'angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +22,8 @@ import { FormsModule } from '@angular/forms';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
+import { OrderComponent } from './order/order.component';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
@@ -32,20 +37,23 @@ import { ViewCartComponent } from './view-cart/view-cart.component';
     FooterComponent,
     UserSignInComponent,
     UserSignUpComponent,
-    ViewCartComponent
+    ViewCartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    // SocialLoginModule
   ],
-  providers: [UserService,CategoryService,ProductService,
+  providers: [UserService,CategoryService,ProductService,OrderService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenAuthService,
       multi:true
-    }],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

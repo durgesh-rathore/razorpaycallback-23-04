@@ -28,7 +28,9 @@ export class ViewCartComponent implements OnInit {
       alert('some thing went wrong');
     })
   }
-  
+  placeOrder(){
+    this.router.navigate(['place-order'])
+  }
    ngOnInit(): void {
   }
   

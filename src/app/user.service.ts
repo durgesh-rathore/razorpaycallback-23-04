@@ -18,4 +18,5 @@ apiUrlin="https://angularapi-api.herokuapp.com/api/admin/signin";
 cheackToken():boolean{
  return  !!!localStorage.getItem('token-jwt');
 }
+  
 }

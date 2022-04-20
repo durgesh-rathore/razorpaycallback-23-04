@@ -1,0 +1,52 @@
+<table class="table table-danger">
+  <thead>
+      <tr>
+          <th>SNo.</th>
+          <th>Name</th>
+          <!-- <th>Qty</th> -->
+          <th>Discount</th>
+          <th>Descritption</th>
+          <th>Price</th>
+          <th>Qunties</th>
+          <th>total</th>
+          <!-- <th>Image</th>
+          <th>Edit</th>
+          <th>Delete</th> -->
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let product of cartList; index as SNo">
+           <td>{{SNo+1}}</td>
+          <td>{{product.productName}}</td>
+          <!-- <td>{{product.productQty}}</td> -->
+          <td>{{product.productDiscount}}</td>
+          <td>{{product.productDescription}}</td>
+          <td>{{product.productPrice}}</td>
+          <td><input type="text" [(ngModel)]="productQty" class="form-control" placeholder="Enter the Qty" name="productQty" id=""></td>
+          <td>{{productQty*product.productPrice}}</td>
+      </tr>
+  </tbody>
+</table> 
+
+
+ <div class="container">
+    <form >         
+       <p class="form-group">           
+   </p>
+   <p class="form-group">
+    <input type="text" [(ngModel)]="address" class="form-control" placeholder="please Enter your addres" name="address" id="">
+</p>
+<p class="form-group">
+    <input type="text" [(ngModel)]="city" class="form-control" placeholder="please Enter your city" name="city" id="">
+</p>
+<p class="form-group">
+    <input type="text" [(ngModel)]="mobile" class="form-control" placeholder="please Enter your Mobile" name="mobile" id="">
+</p>
+      <p class="form-group">
+          <button type="submit" (click)="placeOrderHtml()" class="btn btn-primary">
+           procided to Payment
+          </button> 
+      
+     </form>
+   
+    

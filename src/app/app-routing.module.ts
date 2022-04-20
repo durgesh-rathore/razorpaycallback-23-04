@@ -1,21 +1,37 @@
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+
 import { AuthGuard } from './auth.guard';
 import { ContactusComponent } from './contactus/contactus.component';
+import { HomebackgroundComponent } from './homebackground/homebackground.component';
+import { OrderComponent } from './order/order.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ShowCategoryComponent } from './show-category/show-category.component';
+import { TodaySpecialComponent } from './today-special/today-special.component';
+
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { ViewCartComponent } from './view-cart/view-cart.component';
 
-const routes: Routes = [{ path: "signup", component: UserSignUpComponent },
+const routes: Routes = [
+// { path: 'home', component: ShowCateComponent},
+{ path: "signup", component: UserSignUpComponent },
 { path: "signin", component: UserSignInComponent },
- { path: "home", component: ShowCategoryComponent },
-// {
-//   path: "viewCategory",
-//   component: ViewCategoryComponent
-//   //  canActivate:[AuthGuard] 
-// },
+{ path: "home", component: HomebackgroundComponent },
+ { path: "category", component: ShowCategoryComponent },
+ { path: "viewproduct", component: TodaySpecialComponent },
+{
+  path: "viewcart",
+  component: ViewCartComponent,
+  //  canActivate:[AuthGuard] 
+},
+{
+  path:"place-order/:uId",
+  component:OrderComponent
+},
  {
    path: "aboutus",
    component: AboutusComponent
@@ -26,13 +42,11 @@ const routes: Routes = [{ path: "signup", component: UserSignUpComponent },
    component:ContactusComponent
   //  canActivate: [AuthGuard]
  },
-// {
-//   path:"viewCart",
-//   component:ViewCartComponent,
-//   canActivate:[AuthGuard]
-// },
-// { path: "edit-category/:cid", component: EditCategoryComponent },
-// { path: "edit-product/:pid", component: EditProductComponent},
+{
+  path:"viewCart",
+  component:ViewCartComponent,
+ canActivate:[AuthGuard]
+},
  { path: "**", component: PageNotFoundComponent }
 ];
 

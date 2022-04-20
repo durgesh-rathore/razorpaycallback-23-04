@@ -1,21 +1,92 @@
-<!-- 
-<div class="container mr-5">
-    <form class="from-group " #userpost="ngForm" (ngSubmit)="userSignIn(userpost.value)">
-            <div class="col-md-7 mt-3">
-            <label>UserEmail</label>
-            <input type="email" class=" mt -2 form-control" ngModel name="userEmail" placeholder="Enter Your Email address">
-        </div>
-        <div class="col-md-7 mt-3 ">
-            <label>Password</label>
-            <input type="password" class="mt -2 form-control" ngModel name="userPassword" placeholder="Enter Your Name">
-        </div>
-        <div class="col-md-2 mt-3">
-        <button type="submit"  class=" mt -2btn btn-primary form-control">Sign In</button>
-    </div>
-    </form>
-    </div> -->
 
-<div class="container mr-5">
+    <div class="container">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+            <div class="front">
+                <img src="../../assets/images/pexels-ella-olsson-1640777(1).jpg" alt="">
+                <div class="text">
+                    <!-- <span class="text-1">Every new friend is a <br> new adventure</span> -->
+                    <h1> <span class="text-2">Welcome</span></h1>
+                </div>
+            </div>
+            <div class="back">
+                <img class="backImg" src="../../assets/images/fluent_mail-28-filled.png" alt="">
+                <div class="text">
+                    <span class="text-1">Complete miles of journey <br> with one step</span>
+                    <span class="text-2">Let's get started</span>
+                </div>
+            </div>
+        </div>
+        <div class="forms">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Login</div>
+                    <form action="#">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-envelope"></i>
+                                <!-- <input type="text" placeholder="Enter your email" required> -->
+                                <input [(ngModel)]="userEmail" type="email" class=" mt -2 form-control"  name="userEmail" placeholder="Enter Your Email address">
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <!-- <input type="password" placeholder="Enter your password" required> -->
+                                <input [(ngModel)]="userPassword" type="password" class="mt -2 form-control "  name="userPassword" placeholder="Enter Your Name">
+                            </div>
+                            <!-- <div class="button input-box">
+                                <input type="submit" value="Sumbit">
+                            </div> -->
+                            <button (click)="userSignIn()" type="submit"  class=" mt -2 btn btn-primary form-control">Sign In</button>
+                            <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label>
+                            </div>
+                            <div class="col">
+                                <a href="#" class="google btn ">
+                                    Login with Google+
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-form">
+                    <div class="title">Signup</div>
+                    <form action="#">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Enter your name" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-envelope"></i>
+                                <input type="text" placeholder="Enter your email" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Enter your password" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fa fa-mobile" aria-hidden="true"></i>
+
+                                <input type="number" placeholder="Enter your Mobile Number" required>
+                            </div>
+                            <div class="button input-box">
+                                <input type="submit" value="Sumbit">
+                            </div>
+                            <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label>
+                            </div>
+                            <div class="col">
+                                <a href="#" (click)="googlelogin()" class="google btn ">
+                                    Login with Google+
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- <div class="container mr-5">
     <form class="from-group ">
             <div class="col-md-7 mt-3">
             <label>UserEmail</label>
@@ -29,6 +100,5 @@
         <button (click)="userSignIn()" type="submit"  class=" mt -2 btn btn-primary form-control">Sign In</button>
     </div>
     </form>
-    </div>
-    <!-- <h1>{{userEmail}}</h1>
-    <h1>{{userPassword}}</h1> -->
+    </div> -->
+    

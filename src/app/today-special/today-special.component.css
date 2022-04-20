@@ -5,10 +5,16 @@ height: 50px;
 width: 222px;
 border: 1px solid;
 font-size: 26px;
-box-shadow:4px 4px 4px 5px red  ;
+box-shadow:2px 2px 2px 2px red  ;
 
 
 }
+/* .btn{
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+} */
 .button{
     display: flex;
     height: 40px;

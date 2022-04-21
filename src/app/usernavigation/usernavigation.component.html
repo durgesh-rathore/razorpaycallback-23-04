@@ -2,7 +2,7 @@
   <div class="row navdesign">
     <div class="col-3  d-flex justify-content-start">
       <a href="#" class="logo "> <img src="../../assets/images/Group 36.png" width="70px" height="60px"> </a>
-      <h4 >Apna Restourent</h4>
+      <h4 >Apna Restaurant</h4>
     </div>
     <div class="col-9 d-flex justify-content-end">
       <nav class="navbar navbar-expand-lg navbar-light ">
@@ -26,28 +26,37 @@
                   <i class="fas fa-search"></i>
                 </button>
               </div>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="contactus">Contactus</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="aboutus">About</a>
+            </li>
+            <li>
               <a *ngIf="!cheackTokenHtml()" class="nav-link" routerLink="viewcart">view Cart</a>
             </li>
-            <!-- <li class="nav-item">
-              <a *ngIf="!cheackTokenHtml()" class="nav-link" routerLink="favorate">favorate item</a>
-            </li> --> 
-             <li class="nav-item">
-              <a  class="nav-link" routerLink=" "></a>
-            </li> 
             <li class="nav-item">
-              <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="signup">SignUp</a>
+              <a  class="nav-link" routerLink="category">category</a>
             </li>
+            <li class="nav-item">
+              <a  class="nav-link" routerLink="viewproduct">Product</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="signup">SignUp</a>
+            </li> -->
             <li class="nav-item">
               <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="signin">SignIn</a>
             </li>
-            <!-- <li class="nav-item">
-            <a *ngIf="!cheackTokenHtml()" class="nav-link" routerLink="viewProduct">View Product</a>
-          </li>
-          <li class="nav-item">
+
+          <!--<li class="nav-item">
             <a *ngIf="cheackTokenHtml()" class="nav-link" routerLink="orderPlace">Order Place</a>
           </li> -->
             <li class="nav-item">
-              <a *ngIf="!cheackTokenHtml()" class="nav-link" (click)="SignOut()">SignOut</a>
+              <a *ngIf="!cheackTokenHtml()" class="nav-link" (click)="signOut()">SignOut</a>
             </li>
           </ul>
         </div>
@@ -57,10 +66,17 @@
 
 </div>
 
-<!-- <div>
-  <router-outlet></router-outlet>
-</div> -->
 
-<div class="container">
+ <div>
   <router-outlet></router-outlet>
 </div>
+<!-- <app-homebackground></app-homebackground>
+<app-show-category></app-show-category>
+<app-today-special></app-today-special>
+<app-aboutus></app-aboutus>
+<app-contactus></app-contactus> -->
+<!-- <app-today-special></app-today-special>-->
+
+<!-- <div class="container">
+  <router-outlet></router-outlet>
+</div> -->

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { UserService } from '../user.service';
+// mport{SocialAuthService,GoogleLoginProvider} from "angularx-social-login"
 
 @Component({
   selector: 'app-user-sign-in',
@@ -10,7 +12,7 @@ import { UserService } from '../user.service';
 export class UserSignInComponent implements OnInit {
    userEmail="";
    userPassword="";
-  constructor(private _service:UserService,private router:Router) { }
+  constructor(private _service:UserService,private router:Router ) { }
   userSignIn(){
     this._service.check(this.userEmail,this.userPassword).subscribe(result=>{
       if(result){
@@ -24,17 +26,28 @@ export class UserSignInComponent implements OnInit {
         alert("your login failed");
     });
   }
-  googlelogin(){
-    
+  // signinWithGoogle(){
+  //   this.social.signIn(GoogleLoginProvider.PROVIDER_ID)
+  //   .then(()=>{
+  //     this.social.authState.subscribe(data=>{
+  //       console.log(data.email)
+  //     })
+  //   })
+  // }
+
+  userSignUp(){
+    this._service.userapiservice(this.userEmail,this.userPassword).subscribe(result=>{
+      if(result){
+       alert("Registration Successfull");
+      //  this.router.navigate(['signin']);
+      }
+       else
+       alert("Registration Failed");
+    })
+
   }
+
   ngOnInit(): void {
   }
 
 }
-// Case 1.
-// verify = I want to verify the how so we take every situation we send the token id and cheack 
-// in api or backend code  when be generate token id 
-// Case 2.
-// ya to feer mujhe one other 
-// user does not sign out than we will use verify and ridirect login page
-// user back to home page  than we  will berify user

@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import {
-  GoogleLoginProvider,  FacebookLoginProvider} from 'angularx-social-login';
+// import { SocialLoginModule , GoogleLoginProvider  } from 'angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,10 +18,22 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenAuthService } from './token-auth.service';
 import { FormsModule } from '@angular/forms';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
-import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+// import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
 import { OrderComponent } from './order/order.component';
 import { OrderService } from './order.service';
+import { ProductComponent } from './click-product/product.component';
+import { ProductBuyComponent } from './product-buy/product-buy.component';
+
+// const socialProvider={
+//   provide:"SocialAuthServiceConfig",
+//   useValue:{
+//     providers:[{
+//       id:GoogleLoginProvider.PROVIDER_ID,
+//       provider:new GoogleLoginProvider("922318844245-f11thr30ec75j7smr48svkdecfm6bptf.apps.googleusercontent.com")
+//     }]
+//   }
+// };
 
 @NgModule({
   declarations: [
@@ -36,9 +46,11 @@ import { OrderService } from './order.service';
     ContactusComponent,
     FooterComponent,
     UserSignInComponent,
-    UserSignUpComponent,
+    // UserSignUpComponent,
     ViewCartComponent,
-    OrderComponent
+    OrderComponent,
+    ProductComponent,
+    ProductBuyComponent
   ],
   imports: [
     BrowserModule,

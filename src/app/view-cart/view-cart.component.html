@@ -1,9 +1,10 @@
-
+<div class="container">
  <table class="table table-danger">
     <thead>
         <tr>
             <th>SNo.</th>
             <th>Name</th>
+            <th>Price</th>
             <th>Image</th>
             <!-- <th>Edit</th> -->
             <th>Delete</th>
@@ -17,12 +18,13 @@
             <td>{{cart.productName}}</td>
             <td>{{cart.productPrice}}</td>
             <td> <img  width="100px 100px" src={{cart.productImageUrl}} alt="loading"> </td>
-            <td> <button class="btn btn-primary" (click)="removeFromCart(cart._id)"  >Delete</button></td> 
+            <td> <button class="btn btn-primary" (click)="removeFromCart(cart._id)"  >Delete</button></td>
             <!-- <td> <button class="btn btn-danger" (click)="placeOrder()">Place Order</button></td> -->
             <!-- <td> <button class="btn btn-danger" (click)="Editcart(product._id)"> </button></td> -->
-            
+
         </tr>
 
     </tbody>
-</table> 
+</table>
   <button class="btn btn-danger" (click)="placeOrder()">Place Order</button>
+</div>

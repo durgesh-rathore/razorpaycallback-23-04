@@ -29,7 +29,7 @@ export class ViewCartComponent implements OnInit {
     })
   }
   placeOrder(){
-    this.router.navigate(['place-order'])
+    this.router.navigate(['place-order',localStorage.getItem('admin-id')])
   }
    ngOnInit(): void {
   }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../order.service';
 import { ProductService } from '../product.service';
 // declare let Razorpay:any;
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -13,9 +15,11 @@ export class ProductComponent implements OnInit {
   productDescription:string="";
   productImageUrl:any="";
   productPrice:number=0;
+
   productName:string=""
   total:number=0;
   constructor(private router:ActivatedRoute,private routern:Router,private productser:ProductService,private serve:OrderService) {
+
   this.pId=this.router.snapshot.paramMap.get('pid');
   this.productser.viewProduct().subscribe(result=>{
     if(result){
@@ -26,6 +30,7 @@ export class ProductComponent implements OnInit {
           this.pId=pId1._id;
           this.productDescription=pId1.productDescription;
           this.productImageUrl=pId1.productImageUrl;
+
           this.productPrice=pId1.productPrice;
           this.productName=pId1.productName;
           console.log("durgesh"+pId1);
@@ -37,6 +42,8 @@ export class ProductComponent implements OnInit {
   })
 
    }
+
+
 
    addToCart(){
   alert("ram ram")
@@ -79,6 +86,7 @@ export class ProductComponent implements OnInit {
    buyNow(){
       this.routern.navigate(["productBuy",this.pId]);
    }
+
   ngOnInit():void {
   }
 

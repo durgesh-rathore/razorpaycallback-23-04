@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
+
 import { CategoryService } from '../category.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { CategoryService } from '../category.service';
 })
 export class ShowCategoryComponent implements OnInit {
   categoryList: any;
+
 show:number=8;
 i:any=1;
   constructor( private category:CategoryService,private router:Router) {
@@ -30,6 +33,7 @@ i:any=1;
     console.log(" show logic"+this.show)
       // this.show=6*(this.i++);
    }
+
   ngOnInit(): void {
   }
 

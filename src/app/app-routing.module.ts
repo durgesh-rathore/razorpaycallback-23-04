@@ -20,7 +20,9 @@ import { ViewCartComponent } from './view-cart/view-cart.component';
 
 const routes: Routes = [
 // { path: 'home', component: ShowCateComponent},
+// { path: "signup", component: UserSignUpComponent },
  { path: "", component: HomebackgroundComponent },
+
 { path: "signin", component: UserSignInComponent },
 {path:'productdesc/:pid',component:ProductComponent},
 { path: "home", component: HomebackgroundComponent },
@@ -31,7 +33,9 @@ const routes: Routes = [
   component: ViewCartComponent,
   //  canActivate:[AuthGuard]
 },
+
 {path:'productBuy/:pId',component:ProductBuyComponent},
+
 {
   path:"place-order/:uId",
   component:OrderComponent

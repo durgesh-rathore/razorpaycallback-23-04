@@ -5,10 +5,12 @@
     <button class="btn justify-content-center mt-5">Category</button>
   </div> 
     <div class="row ">
+
         <div *ngFor="let category of categoryList.slice(0,show);" class="col-md-3 category-card">
         <div class="category-image">
             <!-- <img src="../../assets/images/pexels-julie-aagaard-2097090.jpg" > -->
             <img (click)="showCategoryProduct(category._id)" src="{{category.categoryImageUrl}}" alt="">
+
         </div>
          <a href="">{{category.categoryName}} </a>
         </div>

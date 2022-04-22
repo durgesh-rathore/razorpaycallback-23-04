@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
+
+ import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { UserService } from '../user.service';
-// mport{SocialAuthService,GoogleLoginProvider} from "angularx-social-login"
+// import {SocialAuthService,GoogleLoginProvider} from "angularx-social-login"
+
 
 @Component({
   selector: 'app-user-sign-in',
@@ -12,7 +14,9 @@ import { UserService } from '../user.service';
 export class UserSignInComponent implements OnInit {
    userEmail="";
    userPassword="";
-  constructor(private _service:UserService,private router:Router ) { }
+
+  constructor(private _service:UserService,private router:Router,private social:SocialAuthService ) { }
+
   userSignIn(){
     this._service.check(this.userEmail,this.userPassword).subscribe(result=>{
       if(result){
@@ -26,14 +30,16 @@ export class UserSignInComponent implements OnInit {
         alert("your login failed");
     });
   }
-  // signinWithGoogle(){
-  //   this.social.signIn(GoogleLoginProvider.PROVIDER_ID)
-  //   .then(()=>{
-  //     this.social.authState.subscribe(data=>{
-  //       console.log(data.email)
-  //     })
-  //   })
-  // }
+
+  signinWithGoogle(){
+    this.social.signIn(GoogleLoginProvider.PROVIDER_ID)
+    this.social.authState.subscribe(data=>{
+      console.log(data)
+      console.log(data.email);
+      this.router.navigate(['home']);
+    })
+  }
+
 
   userSignUp(){
     this._service.userapiservice(this.userEmail,this.userPassword).subscribe(result=>{

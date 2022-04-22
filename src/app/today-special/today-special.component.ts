@@ -12,7 +12,9 @@ export class TodaySpecialComponent implements OnInit {
   productList: any;
   // s:number=6;
   i: any=1;
+
   show: number=12;
+
 
   constructor(private product:ProductService,private router:Router,private cart:CartService) {
     this.product.viewProduct().subscribe(result=>{
@@ -24,7 +26,9 @@ export class TodaySpecialComponent implements OnInit {
    }
    showmore(){
     //  let l=6;
+
     // console.log(" show logic"+this.show)
+
       this.show=6*(this.i++);
    }
    addToCartHtml(pId:any){

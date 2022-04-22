@@ -23,7 +23,7 @@ export class OrderComponent implements OnInit {
   cartList: any;
 
 
-  constructor(private cart:CartService,private orderservice:OrderService,private router:ActivatedRoute) { 
+  constructor(private cart:CartService,private orderservice:OrderService,private router:ActivatedRoute) {
   // constructor(private router:ActivatedRoute,private cs:CategoryService) {
     // this.cid=this.router.snapshot.paramMap.get('cid')
     this.uId=this.router.snapshot.paramMap.get('uId')
@@ -34,12 +34,12 @@ export class OrderComponent implements OnInit {
       }
       else
       alert("cart not found")
-  })  
+  })
   }
 
     placeOrderHtml(){
       // let formdata=new FormData();
-      
+
       this.orderservice.placeOrder(this.address,this.city,this.mobile,this.uId,this.cartList).subscribe(result=>{
         if(result)
         alert("place Ordered");

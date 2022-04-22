@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
 import { AuthGuard } from './auth.guard';
+import { ProductComponent } from './click-product/product.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomebackgroundComponent } from './homebackground/homebackground.component';
 import { OrderComponent } from './order/order.component';
@@ -13,20 +14,21 @@ import { ShowCategoryComponent } from './show-category/show-category.component';
 import { TodaySpecialComponent } from './today-special/today-special.component';
 
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
-import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+// import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ViewCartComponent } from './view-cart/view-cart.component';
 
 const routes: Routes = [
 // { path: 'home', component: ShowCateComponent},
-{ path: "signup", component: UserSignUpComponent },
+// { path: "signup", component: UserSignUpComponent },
 { path: "signin", component: UserSignInComponent },
+{path:'productdesc/:pid',component:ProductComponent},
 { path: "home", component: HomebackgroundComponent },
  { path: "category", component: ShowCategoryComponent },
  { path: "viewproduct", component: TodaySpecialComponent },
 {
   path: "viewcart",
   component: ViewCartComponent,
-  //  canActivate:[AuthGuard] 
+  //  canActivate:[AuthGuard]
 },
 {
   path:"place-order/:uId",

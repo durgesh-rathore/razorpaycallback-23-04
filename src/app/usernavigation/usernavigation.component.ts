@@ -12,7 +12,7 @@ export class UsernavigationComponent implements OnInit {
   cheackTokenHtml(){
     return this._service.cheackToken();
   }
-  SignOut(){
+  signOut(){
     localStorage.removeItem('token-jwt');
   }
 

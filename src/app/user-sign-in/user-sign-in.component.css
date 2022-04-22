@@ -8,7 +8,7 @@
     background-color: rgb(213, 224, 224);
     width: 500px;
     margin: auto; */
-    
+
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -33,6 +33,7 @@ body {
   padding: 30px;
 }
 .container {
+  margin-left: 255px;
   position: relative;
   max-width: 850px;
   width: 100%;

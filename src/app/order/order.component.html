@@ -22,16 +22,16 @@
           <td>{{product.productDiscount}}</td>
           <td>{{product.productDescription}}</td>
           <td>{{product.productPrice}}</td>
-          <td><input type="text" [(ngModel)]="productQty" class="form-control" placeholder="Enter the Qty" name="productQty" id=""></td>
+          <td><input type="text" class="form-control" placeholder="Enter the Qty" name="productQty" id=""></td>
           <td>{{productQty*product.productPrice}}</td>
       </tr>
   </tbody>
-</table> 
+</table>
 
 
  <div class="container">
-    <form >         
-       <p class="form-group">           
+    <form >
+       <p class="form-group">
    </p>
    <p class="form-group">
     <input type="text" [(ngModel)]="address" class="form-control" placeholder="please Enter your addres" name="address" id="">
@@ -44,9 +44,8 @@
 </p>
       <p class="form-group">
           <button type="submit" (click)="placeOrderHtml()" class="btn btn-primary">
-           procided to Payment
-          </button> 
-      
+           Proceed to Payment
+          </button>
+
      </form>
-   
-    
+

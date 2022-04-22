@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-// import { pid } from 'process';
-// import { pid } from 'process';
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { OrderService } from '../order.service';
 import { ProductService } from '../product.service';
+// declare let Razorpay:any;
 
 @Component({
   selector: 'app-product',
@@ -14,7 +15,11 @@ export class ProductComponent implements OnInit {
   productDescription:string="";
   productImageUrl:any="";
   productPrice:number=0;
-  constructor(private router:ActivatedRoute,private productser:ProductService) {
+
+  productName:string=""
+  total:number=0;
+  constructor(private router:ActivatedRoute,private routern:Router,private productser:ProductService,private serve:OrderService) {
+
   this.pId=this.router.snapshot.paramMap.get('pid');
   this.productser.viewProduct().subscribe(result=>{
     if(result){
@@ -25,12 +30,11 @@ export class ProductComponent implements OnInit {
           this.pId=pId1._id;
           this.productDescription=pId1.productDescription;
           this.productImageUrl=pId1.productImageUrl;
+
+          this.productPrice=pId1.productPrice;
+          this.productName=pId1.productName;
           console.log("durgesh"+pId1);
 
-
-          // console.log("pid"+pId1)
-        // this.productdesc=pId1;
-          // console.log("productdesc"+this.productdesc)
         }
        }
     }
@@ -39,6 +43,49 @@ export class ProductComponent implements OnInit {
 
    }
 
+
+
+   addToCart(){
+  alert("ram ram")
+   }
+//    RazorPayment(){
+//     this.serve.createOrder(this.total).subscribe((result:any)=>{
+//       console.log(result);
+//       console.log(result.id);
+//       var options = {
+//         "key": "rzp_test_25KnYfoIcEzVyf", // Enter the Key ID generated from the Dashboard
+//         "amount": this.total, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//         "currency": "INR",
+//         "productName": this.productName,
+//         "description": "payment Transaction",
+//         "image": "https://example.com/your_logo",
+//         "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+//         "callback_url": "http://localhost:3000/order-status",
+//         "prefill": {
+//             "name": "Gaurav Kumar",
+//             "email": localStorage.getItem('admin-id'),
+//             "contact": "7999950398"
+//         },
+//         "notes": {
+//             "address": this.adress
+//         },
+//         "theme": {
+//             "color": "#3399cc"
+//         }
+//     };
+//     var rzp1 = new Razorpay(options);
+//     rzp1.open();
+
+//     })
+ 
+
+  
+   
+// }
+  
+   buyNow(){
+      this.routern.navigate(["productBuy",this.pId]);
+   }
 
   ngOnInit():void {
   }

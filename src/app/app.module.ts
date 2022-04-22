@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { SocialLoginModule , GoogleLoginProvider  } from 'angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import { OrderComponent } from './order/order.component';
 import { OrderService } from './order.service';
 import { ProductComponent } from './click-product/product.component';
 
+
 const socialProvider={
   provide:"SocialAuthServiceConfig",
   useValue:{
@@ -33,6 +35,19 @@ const socialProvider={
     }]
   }
 };
+
+import { ProductBuyComponent } from './product-buy/product-buy.component';
+
+// const socialProvider={
+//   provide:"SocialAuthServiceConfig",
+//   useValue:{
+//     providers:[{
+//       id:GoogleLoginProvider.PROVIDER_ID,
+//       provider:new GoogleLoginProvider("922318844245-f11thr30ec75j7smr48svkdecfm6bptf.apps.googleusercontent.com")
+//     }]
+//   }
+// };
+
 
 @NgModule({
   declarations: [
@@ -48,16 +63,21 @@ const socialProvider={
     // UserSignUpComponent,
     ViewCartComponent,
     OrderComponent,
-    ProductComponent
+
+    ProductComponent,
+    ProductBuyComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+
     SocialLoginModule
   ],
   providers: [socialProvider,UserService,CategoryService,ProductService,OrderService,
+
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenAuthService,

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
  import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { UserService } from '../user.service';
 // import {SocialAuthService,GoogleLoginProvider} from "angularx-social-login"
+
 
 @Component({
   selector: 'app-user-sign-in',
@@ -12,7 +14,9 @@ import { UserService } from '../user.service';
 export class UserSignInComponent implements OnInit {
    userEmail="";
    userPassword="";
+
   constructor(private _service:UserService,private router:Router,private social:SocialAuthService ) { }
+
   userSignIn(){
     this._service.check(this.userEmail,this.userPassword).subscribe(result=>{
       if(result){
@@ -35,6 +39,7 @@ export class UserSignInComponent implements OnInit {
       this.router.navigate(['home']);
     })
   }
+
 
   userSignUp(){
     this._service.userapiservice(this.userEmail,this.userPassword).subscribe(result=>{

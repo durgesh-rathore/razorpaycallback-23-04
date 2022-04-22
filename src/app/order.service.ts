@@ -12,7 +12,7 @@ export class OrderService {
   placeOrder( address:any,city:string,mobile:string, uId:any,productId:any):Observable<any>{
     return this.http.post(this.placeOrderUrl,{address:address,city:city,mobile:mobile,userId:uId,productId:productId})
   }
-  public createOrder(amount:number){
-    return this.http.post(this.orderApi,{amount})
+  public createOrder(amount:number):Observable<any>{
+    return this.http.post(this.orderApi,{amount:amount})
   }
 }

@@ -24,7 +24,7 @@ export class TodaySpecialComponent implements OnInit {
    }
    showmore(){
     //  let l=6;
-    console.log(" show logic"+this.show)
+    // console.log(" show logic"+this.show)
       this.show=6*(this.i++);
    }
    addToCartHtml(pId:any){

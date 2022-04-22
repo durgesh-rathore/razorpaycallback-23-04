@@ -1,6 +1,15 @@
 <!-- <p>product-buy works!</p> -->
+
 <div>
-    <span>Product Name</span>
+     <h1>Payment</h1>
+    <span>Product Name:{{productName}}</span> <br>
+      <label >Product Qty:</label>
+     <span><input type="text" [(ngModel)]="productQty" name="productQty"></span><br>
+    <span>Product Price:{{productPrice}}</span><br>
+     <h3>Total:{{productQty*productPrice}}</h3><br>
+     <input type="text" [(ngModel)]="userName" name="userName" placeholder="please Enter your Name"><br>
+     <input type="text" [(ngModel)]="address" name="address" placeholder="please Enter your Address"><br>
+     <input type="text" [(ngModel)]="mobile" name="mobile" placeholder="please Enter your Mobile number"><br>
     <!-- <span>{{}}</span> -->
 </div>
 <button (click)="RazorPayment()">Buy Now</button>
